@@ -1,0 +1,40 @@
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\bin\Debug\CoffeeMachine1.exe.config
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\bin\Debug\CoffeeMachine1.exe
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\bin\Debug\CoffeeMachine1.pdb
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\bin\Debug\EntityFramework.dll
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\bin\Debug\EntityFramework.xml
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.csprojAssemblyReference.cache
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\MainWindow.g.cs
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\App.g.cs
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1_MarkupCompile.cache
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1_MarkupCompile.lref
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\MainWindow.baml
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.g.resources
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.Properties.Resources.resources
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.csproj.GenerateResource.cache
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.csproj.CoreCompileInputs.cache
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.csproj.CopyComplete
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.exe
+C:\Users\havas\OneDrive\Рабочий стол\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.pdb
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\bin\Debug\CoffeeMachine1.exe.config
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\bin\Debug\CoffeeMachine1.exe
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\bin\Debug\CoffeeMachine1.pdb
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\bin\Debug\EntityFramework.dll
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\bin\Debug\EntityFramework.SqlServer.dll
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\bin\Debug\EntityFramework.xml
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\bin\Debug\EntityFramework.SqlServer.xml
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.csprojAssemblyReference.cache
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\MainWindow.g.cs
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\App.g.cs
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1_MarkupCompile.cache
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1_MarkupCompile.lref
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\MainWindow.baml
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.g.resources
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.Properties.Resources.resources
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.csproj.GenerateResource.cache
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.csproj.CoreCompileInputs.cache
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.csproj.CopyComplete
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.exe
+D:\программирование учеба\проекты из собес\CoffeeMachine1\CoffeeMachine1\obj\Debug\CoffeeMachine1.pdb

@@ -1,0 +1,350 @@
+﻿<Window x:Class="Wpf_CoffeeMachine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_CoffeeMachine"
+        mc:Ignorable="d"
+        Title="Виртуальный аппарат по продаже кофе" WindowState="Maximized" Height="450" Width="800" Closing="ClosingMainWindow">
+    <Window.Resources>
+        <Style TargetType="DataGrid">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="RowHeight" Value="50"/>
+            <Setter Property="ColumnHeaderHeight" Value="30"/>
+            <Setter Property="Background" Value="Moccasin"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+            <Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style x:Key="left_alignment" TargetType="DataGridCell" >
+            <Setter Property="TextBlock.TextAlignment" Value="Left"></Setter>
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style x:Key="left_alignment1" TargetType="DataGridColumnHeader" >
+            <Setter Property="TextBlock.TextAlignment" Value="Left"></Setter>
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="Moccasin"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+        </Style>
+        <Style x:Key="user_left_alignment1" TargetType="DataGridColumnHeader" >
+            <Setter Property="TextBlock.TextAlignment" Value="Left"></Setter>
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="AntiqueWhite"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+        </Style>
+        <Style x:Key="center_header_alignment1" TargetType="DataGridColumnHeader" >
+            <!--<Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center"></Setter>-->
+            <Setter Property="Background" Value="Moccasin"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="user_center_header_alignment1" TargetType="DataGridColumnHeader" >
+            <!--<Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center"></Setter>-->
+            <Setter Property="Background" Value="AntiqueWhite"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="GroupBox">
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="20" />
+        </Style>
+        <Style TargetType="TextBox" >
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Width" Value="70"  />
+            <Setter Property="HorizontalAlignment" Value="Left"  />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="FontSize" Value="14"  />
+            <Setter Property="Background" Value="#FFE6E6EA"  />
+            <Setter Property="SpellCheck.IsEnabled" Value="True"  />
+            <Setter Property="Language" Value="ru-RU"  />
+            <Setter Property="VerticalContentAlignment" Value="Center"  />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Label" >
+            <Setter Property="Height" Value="35"  />
+            <Setter Property="Width" Value="75"  />
+            <Setter Property="HorizontalAlignment" Value="Left"  />
+            <Setter Property="VerticalAlignment" Value="Center"  />
+            <Setter Property="FontSize" Value="18"  />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="43"  />
+            <Setter Property="Width" Value="95"  />
+            <Setter Property="HorizontalAlignment" Value="Left"  />
+            <Setter Property="VerticalAlignment" Value="Center"  />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="14"  />
+        </Style>
+        <!--<Style TargetType="{x:Type Border}" x:Key="button_border">
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>-->
+        <ControlTemplate x:Key="GroupBoxControlTemplate1" TargetType="{x:Type GroupBox}">
+            <Grid SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="6"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="6"/>
+                </Grid.RowDefinitions>
+                <Border BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="4" Grid.Column="0" CornerRadius="4" Grid.Row="1" Grid.RowSpan="3"/>
+                <Border BorderBrush="Black" RenderTransformOrigin="0.5,0.5" BorderThickness="0.7" Grid.ColumnSpan="4" CornerRadius="7" Grid.Row="1" Grid.RowSpan="3">
+                    <Border.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Border.RenderTransform>
+                    <Border.OpacityMask>
+                        <MultiBinding ConverterParameter="7" UpdateSourceTrigger="Default">
+                            <MultiBinding.Converter>
+                                <BorderGapMaskConverter/>
+                            </MultiBinding.Converter>
+                            <Binding ElementName="Header" Path="ActualWidth"/>
+                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource Self}"/>
+                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource Self}"/>
+                        </MultiBinding>
+                    </Border.OpacityMask>
+                    <Border  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                        <Border BorderBrush="White" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"/>
+                    </Border>
+                </Border>
+                <Border x:Name="Header" Grid.Column="2" HorizontalAlignment="Right" Padding="3,1,3,0" Grid.Row="0" Grid.RowSpan="2">
+                    <ContentPresenter ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" ContentStringFormat="{TemplateBinding HeaderStringFormat}" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                </Border>
+                <ContentPresenter Grid.ColumnSpan="2" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="1" ContentStringFormat="{TemplateBinding ContentStringFormat}" Margin="{TemplateBinding Padding}" Grid.Row="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            </Grid>
+        </ControlTemplate>
+
+    </Window.Resources>
+    <Grid x:Name="first">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="wallet" HorizontalAlignment="Left">
+            <GroupBox 
+                    Header="Кошелек пользователя" 
+                    BorderThickness="3" 
+                    Margin="15"
+                    FontSize="23" 
+                    BorderBrush="Black"
+                    Background="Beige"
+                    VerticalAlignment="Top"
+                    Height="auto">
+                <Grid>
+                    <DataGrid 
+                            Margin="0,10,0,0"                            
+                            x:Name="MainDataGrid"                                                       
+                            BorderBrush="Azure"                           
+                            Background="AntiqueWhite">
+                        <!--<DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Background" Value="Tan"/>
+                            </Style>
+                        </DataGrid.RowStyle>-->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn 
+                                    Binding="{Binding Rating, UpdateSourceTrigger=PropertyChanged}" 
+                                    IsReadOnly="True" 
+                                    Header="Номинал" 
+                                    Width="Auto"
+                                    CellStyle="{StaticResource left_alignment}"
+                                    HeaderStyle="{StaticResource user_left_alignment1}"/>
+                            <DataGridTextColumn 
+                                    Binding="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" 
+                                    IsReadOnly="True" 
+                                    Header="Количество" 
+                                    Width="*"
+                                    HeaderStyle="{StaticResource user_center_header_alignment1}"/>
+                            <DataGridTemplateColumn 
+                                Header=""
+                                HeaderStyle="{StaticResource user_center_header_alignment1}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel x:Name="stackpanel" Orientation="Horizontal">
+                                            <!--<TextBox x:Name="txtbox_input" Text="{Binding Path=Quantity_to_pay, Mode=TwoWay}"  PreviewTextInput="NumberValidationTextBox" IsReadOnly="False" Width="70" Background="CadetBlue" ></TextBox>-->
+                                            <Button x:Name="btnPay"
+                                                Content="Внести" 
+                                                Click="btnPay_Click"
+                                                Background="LightSteelBlue">
+                                                <Button.Resources>
+                                                    <Style TargetType="{x:Type Border}">
+                                                        <Setter Property="CornerRadius" Value="10"/>
+                                                    </Style>
+                                                </Button.Resources>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Background" Value="AntiqueWhite"/>
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <GroupBox Grid.Column="1"
+                  Header="Кофе-машина" 
+                  FontSize="24"
+                  Background="LemonChiffon"
+                  Margin="15"
+                  Template="{DynamicResource GroupBoxControlTemplate1}"  >
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <GroupBox Header="Меню" Margin="1" Grid.Row="0" Grid.ColumnSpan="4">
+                    <DataGrid x:Name="MenuDataGrid" Grid.Row="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn 
+                                Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" 
+                                IsReadOnly="True" 
+                                Header="Наименование" 
+                                Width="Auto"                               
+                                MinWidth="170"
+                                CellStyle="{StaticResource left_alignment}"
+                                HeaderStyle="{StaticResource left_alignment1}">
+                                <!--<DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader" >
+                                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>-->
+                            </DataGridTextColumn>
+                            <DataGridTextColumn 
+                                Binding="{Binding Price, UpdateSourceTrigger=PropertyChanged}" 
+                                IsReadOnly="True" 
+                                Header="Цена, руб." 
+                                Width="auto"
+                                HeaderStyle="{StaticResource center_header_alignment1}"/>
+                            <DataGridTextColumn 
+                                Binding="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" 
+                                IsReadOnly="True" 
+                                Header="Количество, порций" 
+                                Width="*"
+                                HeaderStyle="{StaticResource center_header_alignment1}"/>
+                            <DataGridTemplateColumn 
+                                Header=""
+                                HeaderStyle="{StaticResource center_header_alignment1}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel x:Name="stackpanel" Orientation="Horizontal">
+                                            <!--<TextBox x:Name="txtbox_input" Text="{Binding Path=Quantity_to_pay, Mode=TwoWay}"  PreviewTextInput="NumberValidationTextBox" IsReadOnly="False" Width="70" Background="CadetBlue" ></TextBox>-->
+                                            <Button x:Name="btn_Order"
+                                                Content="Купить" 
+                                                Click="btn_Buy_Click"
+                                                Background="GreenYellow">
+                                                <Button.Resources>
+                                                    <Style TargetType="{x:Type Border}">
+                                                        <Setter Property="CornerRadius" Value="10"/>
+                                                    </Style>
+                                                </Button.Resources>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Background" Value="Moccasin"/>
+                            </Style>
+                        </DataGrid.RowStyle>
+                        <!--<DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="Moccasin"/>
+                                <Setter Property="FontWeight" Value="DemiBold"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>-->
+                    </DataGrid>
+                </GroupBox>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Label Content="Внесенная сумма"
+                    Width="auto" Height="35"/>
+                    <TextBox
+                    x:Name="sum_txtbox"
+                    Width="100"
+                    Height="Auto"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="10,0,0,0"
+                    Background="Azure"
+                    FontSize="20" />
+                </StackPanel>
+                <Grid Grid.Row="2"  HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Сдача"                           
+                            Height="100" 
+                            Margin="10,20,0,20"
+                            Background="LightSteelBlue"
+                            FontSize="18"
+                            Click="Return_money_Click" Width="70"  >
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <GroupBox Grid.Column="1" Header="Кошелек кофе-машины" Margin="1" HorizontalAlignment="Stretch">
+                        <DataGrid
+                        x:Name="VMDataGrid"
+                            RowHeight="38">
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="Background" Value="{Binding ColorSet}"/>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn 
+                                    Binding="{Binding Rating, UpdateSourceTrigger=PropertyChanged}" 
+                                    IsReadOnly="True" 
+                                    Header="Номинал" 
+                                    Width="Auto"
+                                    CellStyle="{StaticResource left_alignment}"
+                                    HeaderStyle="{StaticResource left_alignment1}"/>
+                                <DataGridTextColumn 
+                                    Binding="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" 
+                                    IsReadOnly="True" 
+                                    Header="Количество" 
+                                    Width="*"
+                                    HeaderStyle="{StaticResource center_header_alignment1}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                </Grid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
